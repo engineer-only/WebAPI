@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $("#button4").css("background-color","yellow");
     $("#flip").click(function(){
         $("#panel").slideDown(5000);
     });
