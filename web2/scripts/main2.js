@@ -1,6 +1,30 @@
 $(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+    $("#sDown").click(function()
+    {
+        $("#hide").slideDown();
+    });
+    $("#sUp").click(function()
+    {
+        $("#hide").slideUp();
+    });
+    $("#leftB").click(function()
+    {
+        $("#box").animate({right:'+=150px'});
+    });
+    $("#rightB").click(function()
+    {
+        $("#box").animate({right:'-=150px'});
+    });
+    $("#strech").click(function()
+    {
+        $("#box").animate({height: "200px"});
+    });
+    $("#lower").click(function()
+    {
+        $("#box").animate({height: "100px"});
     });
     $("#button1").click(function() // Hide all "p" elements
     {
@@ -20,10 +44,14 @@ $(document).ready(function(){
     });
     $("#button5").dblclick(function() // Executed when double clicked
     {
-        $(this).hide();
-    });
-    $("#button6").mouseenter(function() // Executed when entered that area
-    {
-        alert("You entered area!");
+        var x = Math.floor((Math.random() * 10));
+        if(x % 2 === 1)
+        {
+            $(this).animate({height:'+=150px'});
+        }
+        else
+        {
+            $(this).animate({width:'+=150px'});
+        }
     });
 });

@@ -3,17 +3,48 @@
 <head>
 <title>Test Page</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<link href="styles/style.css" rel="stylesheet" type="text/css">
 <script src="scripts/main2.js"></script>
+<style> 
+#panel, #flip {
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #486c8e;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
 </head>
 <body>
+<center>
+<div id="flip">Click to slide down panel</div>
+<div id="panel"><p id="test1" class="tester">Welcome to onbiron Web Page</p>
+<p id="test2">Here you can test different jQuery features.</p></div>
+<br><br>
 
-<p id="test1" class="tester">Paragraph text1 with ID = "test1"</p>
-<p id="test2">Paragraph text2 with ID = "test2"</p>
-<p id="test3" class="tester">Paragraph text3 with ID = "test3"</p>
 
 
+<p id="hide">Wave text to fluctuate...</p>
 
+<button id="sDown">Slide Down</button>
+<button id="sUp">Slide Up</button>
+
+<br><br>
+<button id="leftB">Slide Left</button>
+<button id="strech">Strech Box</button>
+<button id="lower">Lower Box</button>
+<button id="rightB">Slide Right</button>
+
+<div id="box" style="background:#c93232; height:100px; width:100px; margin:20px; position:relative;"></div>
+
+<br><br>
 <button id="button1">Click me to hide all paragraphs</button>
 <br><br>
 <button id="button2">Click me to hide id="test2" element</button>
@@ -22,10 +53,9 @@
 <br><br>
 <button id="button4">Alert button</button>
 <br><br>
-<button id="button5">Crazy Doubleclick</button>
-<br><br>
-<center><button id="button6">Area</button></center>
+<button id="button5">Big Doubleclick</button>
 
+
+</center>
 </body>
 </html>
-
