@@ -14,4 +14,16 @@ $(document).ready(function(){
     {
         $(".tester").hide();
     });
+    $("#button4").click(function() // Alert
+    {
+        alert("You alerted browser!");
+    });
+    $("#button5").dblclick(function() // Executed when double clicked
+    {
+        $(this).hide();
+    });
+    $("#button6").mouseenter(function() // Executed when entered that area
+    {
+        alert("You entered area!");
+    });
 });
