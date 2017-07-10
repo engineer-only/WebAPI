@@ -190,113 +190,19 @@ $("button4").click(function()
 
 // -----------------------------------------------------------------------------
 
+// Remove DOM elements
 
+$("removeButton").click(function()
+{
+    $("#div1").remove();
+});
 
+// Remove the element with ID="div1"
+// $("p").remove(".test");
+// Removes all <p> elements with class="test"
 
+// Empty DOM elements
 
+$("#div1").empty();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+// Empty() method removes the child elements of the selected element(s)
