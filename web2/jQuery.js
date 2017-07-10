@@ -26,7 +26,7 @@ $("#test").hide() // hides the element with id="test".
 // -----------------------------------------------------------------------------
 
 // Button Hides all the "p" elements in the page
-
+// hide("slow")/hide("fast") speed of the hiding
 $("button").click(function(){
     $("p").hide();
 });
@@ -111,6 +111,8 @@ $("p").on(
     }
 });
 
+// Toggle method
+// Toggle between the hide() and show()
 
 // -----------------------------------------------------------------------------
 
@@ -129,9 +131,33 @@ $("a[target='_blank']")	// Selects all <a> elements with a target attribute valu
 
 // -----------------------------------------------------------------------------
 
+// jQuery Effect Methods
+// Retrieved from : https://www.w3schools.com/jquery/jquery_ref_effects.asp
+// Examples could be found
+
+animate();	//Runs a custom animation on the selected elements
+clearQueue();	// Removes all remaining queued functions from the selected elements
+delay(); //	Sets a delay for all queued functions on the selected elements
+dequeue(); //	Removes the next function from the queue, and then executes the function
+fadeIn(); //	Fades in the selected elements
+fadeOut(); //	Fades out the selected elements
+fadeTo(); //	Fades in/out the selected elements to a given opacity
+fadeToggle(); //	Toggles between the fadeIn() and fadeOut() methods
+finish(); //	Stops, removes and completes all queued animations for the selected elements
+hide(); //	Hides the selected elements
+queue(); //	Shows the queued functions on the selected elements
+show(); //	Shows the selected elements
+slideDown(); //	Slides-down (shows) the selected elements
+slideToggle(); //	Toggles between the slideUp() and slideDown() methods
+slideUp(); //	Slides-up (hides) the selected elements
+stop(); //	Stops the currently running animation for the selected elements
+toggle(); //	Toggles between the hide() and show() methods
+
+// Multiple animations in one query:
+// https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation
 
 
-
+// -----------------------------------------------------------------------------
 
 
 
