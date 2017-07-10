@@ -12,6 +12,6 @@ $(document).ready(function(){
     });
     $("#button3").click(function() // Hide elements with class="tester"
     {
-        $(".test2").hide();
+        $(".tester").hide();
     });
 });
