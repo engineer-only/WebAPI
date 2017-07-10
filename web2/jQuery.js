@@ -160,6 +160,35 @@ toggle(); //	Toggles between the hide() and show() methods
 // -----------------------------------------------------------------------------
 
 
+text(); // Sets or returns the text content of selected elements
+html(); // Sets or returns the content of selected elements (including HTML markup)
+val(); // Sets or returns the value of form fields
+
+// -----------------------------------------------------------------------------
+
+$("#button1").click(function()
+{
+    alert("Text: " + $("#test").text()); // Sets or returns the text content of selected elements
+});
+$("#button2").click(function()
+{
+    alert("HTML: " + $("#test").html()); // Sets or returns the content of selected elements (including HTML markup)
+});
+$("button3").click(function()
+{
+    alert("Value: " + $("#test").val()); // Sets or returns the value of FORM fields
+});
+$("button4").click(function()
+{
+    alert($("#w3s").attr("href")); // Used to get attribute values (For example show link)
+});
+
+// HTML Part
+
+// <p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+// <button>Show Value</button>
+
+// -----------------------------------------------------------------------------
 
 
 

@@ -54,4 +54,8 @@ $(document).ready(function(){
             $(this).animate({width:'+=150px'});
         }
     });
+    $("#textChanger").click(function() // Change Text According to Form
+    {
+        $("#text2Change").text("Hello " + $("#test3").val() + "!");
+    });
 });
