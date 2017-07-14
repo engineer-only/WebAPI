@@ -1,4 +1,5 @@
 <center><img src="https://media.licdn.com/media/p/7/000/2cf/311/16b9794.png" alt="logo" style="width:323px;height:85px;"></center>
+<center>
 <section class="insert">
     <h3>INSERT ACTION</h3>
     <form action="/insert" method="post">
@@ -28,22 +29,6 @@
         </div>
         <button type="submit">INSERT</button>
     </form>
-</section>
-<section class="get">
-    <h3>SEE ACTIONS</h3>
-    <a href="/get-data">LOAD DATA</a>
-    <div>
-        {{# each items }}
-            <article class="item">
-                <div>Status: {{ this.title }}</div>
-                <div>Description: {{ this.content }}</div>
-                <div>Type: {{ this.author }}</div>
-                <div>ID: {{ this._id }}</div>
-                <div>RuleStatus: {{ this.title }}</div>
-                <div>Name: {{ this.title }}</div>
-            </article>
-        {{/each}}
-    </div>
 </section>
 <section class="update">
     <h3>UPDATE ACTIONS</h3>
@@ -78,3 +63,20 @@
         <button type="submit">DELETE</button>
     </form>
 </section>
+<section class="get">
+    <h3>SEE ACTIONS</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>Status: {{ this.title }}</div>
+                <div>Description: {{ this.content }}</div>
+                <div>Type: {{ this.author }}</div>
+                <div>ID: {{ this._id }}</div>
+                <div>RuleStatus: {{ this.title }}</div>
+                <div>Name: {{ this.title }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+</center>

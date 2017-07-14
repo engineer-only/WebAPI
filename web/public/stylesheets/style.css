@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 100px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,7 +12,7 @@ section {
   background: #bdc3c7;
   padding: 10px;
   margin: 30px;
-  width: 300px;
+  width: 600px;
   box-shadow: 3px 3px 1px #34495e;
   min-height: 400px;
 }
@@ -26,12 +26,13 @@ section:last-of-type {
 }
 
 section h3 {
-  border-bottom: 1px solid black;
+  border-bottom: 4px solid black;
   padding-bottom: 5px;
 }
 
 .insert {
   background: #cecece;
+  text-align: left;
 }
 
 .get {
@@ -47,7 +48,7 @@ section h3 {
 }
 
 .input label {
-  display: block;
+  display: inline;
   font-weight: bold;
   padding: 5px 0;
 }
