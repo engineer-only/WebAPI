@@ -1,25 +1,41 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000,
-  mongoose = require('mongoose'),
-  Task = require('./api/models/todoListModel'),
-  bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 3000;
+var mongoose = require('mongoose');
+var Rule = require('./api/schema/schema');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var routes = require('./api/route/routes');
+var path = require('path');
+var hbs = require('express-handlebars');
+
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb');
-
-
+mongoose.connect('mongodb://localhost/rules');
+// view engine setup
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-
-var routes = require('./api/routes/todoListRoutes');
+app.use(logger('dev'));
 routes(app);
-
-app.use(function(req, res) {
-  res.status(404).send({url: req.originalUrl + ' not found'})
-});
-
 app.listen(port);
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('Rule API server started on: ' + port);
+
+
+
+// -------------------------ERROR HANDLERS -------------------------
+// 404: Not found
+app.use(function(req, res)
+{
+    res.status(404).send({url: req.originalUrl + ' not found'});
+});
+// 500: Error reporting
+app.use(function(err, req, res, next)
+{
+    console.error(err.stack);
+    res.json(500, {ERROR: 'Internal server error.'} );
+});
+// -------------------------ERROR HANDLERS -------------------------
