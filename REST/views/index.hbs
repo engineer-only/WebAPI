@@ -85,7 +85,6 @@
     <center>
         <img id="onbironImg" src="https://media.licdn.com/media/p/7/000/2cf/311/16b9794.png" style="width:216px;height:56px;">
     	<h1>DEMO Home Page</h1>
-        <!-- <button id="testBut">ALERT BUTTON</button> -->
 	</center>
     <div class="operations">
     	<section class="insert">
@@ -102,31 +101,31 @@
                 <div class="input">
                     <fieldset>
                         <label for="description">Description:</label>
-                        <input type="text" id="description" name="description">
+                        <input type="text" class="form-control" id="description" name="description">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="startTime">Start Time:</label>
-                        <input type="text" id="startTime" name="startTime">
+                        <input type="text" class="form-control" id="startTime" name="startTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="scheduledTime">Scheduled Time:</label>
-                        <input type="text" id="scheduledTime" name="scheduledTime">
+                        <input type="text" class="form-control" id="scheduledTime" name="scheduledTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="scheduleInterval">Schedule Interval:</label>
-                        <input type="text" id="scheduleInterval" name="scheduleInterval">
+                        <input type="text" class="form-control" id="scheduleInterval" name="scheduleInterval">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="executionTimes">Execution Times:</label>
-                        <input type="text" id="executionTimes" name="executionTimes">
+                        <input type="text" class="form-control" id="executionTimes" name="executionTimes">
                     </fieldset>
                 </div>
                 <div class="input">
@@ -138,61 +137,62 @@
                         <input type="radio" name="requestTypes" value="EXECUTE"> EXECUTE
                     </fieldset>
                 </div>
+                <br>
                 <div class="input">
                     <fieldset>
                         <label for="action">Action:</label>
-                        <input type="text" id="action" name="action">
+                        <input type="text" class="form-control" id="action" name="action">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="parentAppId">Parent App Id:</label>
-                        <input type="text" id="parentAppId" name="parentAppId">
+                        <input type="text" class="form-control" id="parentAppId" name="parentAppId">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="ruleStatus">Rule Status:</label>
-                        <input type="text" id="ruleStatus" name="ruleStatus">
+                        <input type="text" class="form-control" id="ruleStatus" name="ruleStatus">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="endTime">End Time:</label>
-                        <input type="text" id="endTime" name="endTime">
+                        <input type="text" class="form-control" id="endTime" name="endTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="type">Type:</label>
-                        <input type="text" id="type" name="type">
+                        <input type="text" class="form-control" id="type" name="type">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="deviceId">Device ID:</label>
-                        <input type="text" id="deviceId" name="deviceId">
+                        <input type="text" class="form-control" id="deviceId" name="deviceId">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="condition">Condition:</label>
-                        <input type="text" id="condition" name="condition">
+                        <input type="text" class="form-control" id="condition" name="condition">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name">
                     </fieldset>
                 </div>
-                <button type="submit">INSERT</button>
+                <center><button type="submit" class="btn btn-info btn-lg">INSERT</button></center>
             </form>
         </section>
         <section class="get">
             <center><h3>GET DATA</h3>
                 <form action="/get">
-                    <button type="submit" value="LOAD DATA">LOAD DATA</button>
+                    <button type="submit" class="btn btn-info btn-lg" value="LOAD DATA">LOAD DATA</button>
                 </form>
             </center>
                 <div>
@@ -224,7 +224,7 @@
                 <div class="input">
                     <fieldset>
                         <label for="id">MongoDB ID:</label>
-                        <input type="text" id="mongoId" name="mongoId">
+                        <input type="text" class="form-control" id="mongoId" name="mongoId">
                     </fieldset>
                 </div>
                 <div class="input">
@@ -238,31 +238,31 @@
                 <div class="input">
                     <fieldset>
                         <label for="description">Description:</label>
-                        <input type="text" id="description" name="description">
+                        <input type="text" class="form-control" id="description" name="description">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="startTime">Start Time:</label>
-                        <input type="text" id="startTime" name="startTime">
+                        <input type="text" class="form-control" id="startTime" name="startTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="scheduledTime">Scheduled Time:</label>
-                        <input type="text" id="scheduledTime" name="scheduledTime">
+                        <input type="text" class="form-control" id="scheduledTime" name="scheduledTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="scheduleInterval">Schedule Interval:</label>
-                        <input type="text" id="scheduleInterval" name="scheduleInterval">
+                        <input type="text" class="form-control" id="scheduleInterval" name="scheduleInterval">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="executionTimes">Execution Times:</label>
-                        <input type="text" id="executionTimes" name="executionTimes">
+                        <input type="text" class="form-control" id="executionTimes" name="executionTimes">
                     </fieldset>
                 </div>
                 <div class="input">
@@ -277,52 +277,52 @@
                 <div class="input">
                     <fieldset>
                         <label for="action">Action:</label>
-                        <input type="text" id="action" name="action">
+                        <input type="text" class="form-control" id="action" name="action">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="parentAppId">Parent App ID:</label>
-                        <input type="text" id="parentAppId" name="parentAppId">
+                        <input type="text" class="form-control" id="parentAppId" name="parentAppId">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="ruleStatus">Rule Status:</label>
-                        <input type="text" id="ruleStatus" name="ruleStatus">
+                        <input type="text" class="form-control" id="ruleStatus" name="ruleStatus">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="endTime">End Time:</label>
-                        <input type="text" id="endTime" name="endTime">
+                        <input type="text" class="form-control" id="endTime" name="endTime">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="type">Type:</label>
-                        <input type="text" id="type" name="type">
+                        <input type="text" class="form-control" id="type" name="type">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="deviceID">Device ID:</label>
-                        <input type="text" id="deviceId" name="deviceId">
+                        <input type="text" class="form-control" id="deviceId" name="deviceId">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="condition">Condition:</label>
-                        <input type="text" id="condition" name="condition">
+                        <input type="text" class="form-control" id="condition" name="condition">
                     </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name">
                     </fieldset>
                 </div>
-                <button type="submit">UPDATE</button>
+                <center><button type="submit" class="btn btn-warning">UPDATE</button></center>
             </form>
         </section>
         <section class="delete">
@@ -332,21 +332,22 @@
                     <label for="id">MongoDB ID:</label>
                     <input type="text" id="ruleId" name="id">
                 </div>
-                <button type="submit">DELETE</button>
+                <button type="submit" class="btn btn-danger">DELETE</button>
             </form>
         </section>
         <section class="detailed">
             <center><h3>DETAILED DATA</h3></center>
             <form action="/statusActive">
-                <button type="submit" value="LOAD DATA">ACTIVE RULES</button>
+                <button type="submit" value="LOAD DATA" class="btn-success">ACTIVE RULES</button>
             </form>
             <form action="/statusPending">
-                <button type="submit" value="LOAD DATA">PENDING RULES</button>
+                <button type="submit" value="LOAD DATA" class="btn-success">PENDING RULES</button>
             </form>
             <form action="/statusStopped">
-                <button type="submit" value="LOAD DATA">STOPPED RULES</button>
+                <button type="submit" value="LOAD DATA" class="btn-success">STOPPED RULES</button>
             </form>
         </section>
     </div>
+
 </body>
 </html>
