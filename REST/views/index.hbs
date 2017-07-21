@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" crossorigin="anonymous"></script>
     <title> Home Page </title>
     <style>
     	body {
@@ -41,6 +48,9 @@
     	.delete {
     	  background: #cecece;
     	}
+        .detailed {
+    	  background: #cecece;
+    	}
     	.input label {
     	  display: block;
     	  font-weight: bold;
@@ -68,192 +78,275 @@
     	  border: 1px solid black;
     	}
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script>
-        $(document).ready(function()
-        {
-        });
-    </script>
+
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
     <center>
         <img id="onbironImg" src="https://media.licdn.com/media/p/7/000/2cf/311/16b9794.png" style="width:216px;height:56px;">
     	<h1>DEMO Home Page</h1>
+        <!-- <button id="testBut">ALERT BUTTON</button> -->
 	</center>
-	<section class="insert">
-        <center><h3>INSERT DATA</h3></center>
-        <form action="/insert" method="post">
-            <div class="input">
-                <label for="status">Status:</label>
-                <input type="text" id="status" name="status">
-            </div>
-            <div class="input">
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description">
-            </div>
-            <div class="input">
-                <label for="startTime">Start Time:</label>
-                <input type="text" id="startTime" name="startTime">
-            </div>
-            <div class="input">
-                <label for="scheduledTime">Scheduled Time:</label>
-                <input type="text" id="scheduledTime" name="scheduledTime">
-            </div>
-            <div class="input">
-                <label for="scheduleInterval">Schedule Interval:</label>
-                <input type="text" id="scheduleInterval" name="scheduleInterval">
-            </div>
-            <div class="input">
-                <label for="executionTimes">Execution Times:</label>
-                <input type="text" id="executionTimes" name="executionTimes">
-            </div>
-            <div class="input">
-                <label for="requestTypes">Request Types:</label>
-                <input type="text" id="requestTypes" name="requestTypes">
-            </div>
-            <div class="input">
-                <label for="action">Action:</label>
-                <input type="text" id="action" name="action">
-            </div>
-            <div class="input">
-                <label for="parentAppId">Parent App Id:</label>
-                <input type="text" id="parentAppId" name="parentAppId">
-            </div>
-            <div class="input">
-                <label for="ruleStatus">Rule Status:</label>
-                <input type="text" id="ruleStatus" name="ruleStatus">
-            </div>
-            <div class="input">
-                <label for="endTime">End Time:</label>
-                <input type="text" id="endTime" name="endTime">
-            </div>
-            <div class="input">
-                <label for="type">Type:</label>
-                <input type="text" id="type" name="type">
-            </div>
-            <div class="input">
-                <label for="deviceID">Device ID:</label>
-                <input type="text" id="deviceID" name="deviceID">
-            </div>
-            <div class="input">
-                <label for="condition">Condition:</label>
-                <input type="text" id="condition" name="condition">
-            </div>
-            <div class="input">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <button type="submit">INSERT</button>
-        </form>
-    </section>
-    <section class="get">
-        <center><h3>GET DATA</h3>
-            <form action="/get">
-                <button type="submit" value="LOAD DATA">LOAD DATA</button>
+    <div class="operations">
+    	<section class="insert">
+            <center><h3>INSERT DATA</h3></center>
+            <form action="/insert" method="post">
+                <div class="input">
+                    <fieldset>
+                        <label for="status">Status:</label>
+                        <input type="radio" name="status" value="ACTIVE"> ACTIVE<br>
+                        <input type="radio" name="status" value="PENDING"> PENDING<br>
+                        <input type="radio" name="status" value="STOPPED"> STOPPED
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="startTime">Start Time:</label>
+                        <input type="text" id="startTime" name="startTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="scheduledTime">Scheduled Time:</label>
+                        <input type="text" id="scheduledTime" name="scheduledTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="scheduleInterval">Schedule Interval:</label>
+                        <input type="text" id="scheduleInterval" name="scheduleInterval">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="executionTimes">Execution Times:</label>
+                        <input type="text" id="executionTimes" name="executionTimes">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="requestTypes">Request Types:</label>
+                        <input type="radio" name="requestTypes" value="ADD"> ADD<br>
+                        <input type="radio" name="requestTypes" value="REMOVE"> REMOVE<br>
+                        <input type="radio" name="requestTypes" value="EDIT"> EDIT<br>
+                        <input type="radio" name="requestTypes" value="EXECUTE"> EXECUTE
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="action">Action:</label>
+                        <input type="text" id="action" name="action">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="parentAppId">Parent App Id:</label>
+                        <input type="text" id="parentAppId" name="parentAppId">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="ruleStatus">Rule Status:</label>
+                        <input type="text" id="ruleStatus" name="ruleStatus">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="endTime">End Time:</label>
+                        <input type="text" id="endTime" name="endTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="type">Type:</label>
+                        <input type="text" id="type" name="type">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="deviceId">Device ID:</label>
+                        <input type="text" id="deviceId" name="deviceId">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="condition">Condition:</label>
+                        <input type="text" id="condition" name="condition">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </fieldset>
+                </div>
+                <button type="submit">INSERT</button>
             </form>
-        </center>
-            <div>
-                {{# each items }}
-                    <article class="item">
-                        <div>Status: {{ this.status }}</div>
-                        <div>Description: {{ this.description }}</div>
-                        <div>startTime: {{ this.startTime }}</div>
-                        <div>scheduledTime: {{ this.scheduledTime }}</div>
-                        <div>scheduleInterval: {{ this.scheduleInterval }}</div>
-                        <div>executionTimes: {{ this.executionTimes }}</div>
-                        <div>requestTypes: {{ this.requestTypes }}</div>
-                        <div>action: {{ this.action }}</div>
-                        <div>parentAppId: {{ this.parentAppId }}</div>
-                        <div>ruleStatus: {{ this.ruleStatus }}</div>
-                        <div>endTime: {{ this.endTime }}</div>
-                        <div>type: {{ this.type }}</div>
-                        <div>deviceID: {{ this.deviceID }}</div>
-                        <div>condition: {{ this.condition }}</div>
-                        <div>name: {{ this.name }}</div>
-                        <div>MongoDB_ID: {{ this._id }}</div>
-                    </article>
-                {{/each}}
-            </div>
-    </section>
-    <section class="update">
-        <center><h3>UPDATE DATA</h3></center>
-        <form action="/update" method="post">
-            <div class="input">
-                <label for="id">MongoDB ID:</label>
-                <input type="text" id="mongoId" name="mongoId">
-            </div>
-            <div class="input">
-                <label for="status">Status:</label>
-                <input type="text" id="status" name="status">
-            </div>
-            <div class="input">
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description">
-            </div>
-            <div class="input">
-                <label for="startTime">Start Time:</label>
-                <input type="text" id="startTime" name="startTime">
-            </div>
-            <div class="input">
-                <label for="scheduledTime">Scheduled Time:</label>
-                <input type="text" id="scheduledTime" name="scheduledTime">
-            </div>
-            <div class="input">
-                <label for="scheduleInterval">Schedule Interval:</label>
-                <input type="text" id="scheduleInterval" name="scheduleInterval">
-            </div>
-            <div class="input">
-                <label for="executionTimes">Execution Times:</label>
-                <input type="text" id="executionTimes" name="executionTimes">
-            </div>
-            <div class="input">
-                <label for="requestTypes">Request Types:</label>
-                <input type="text" id="requestTypes" name="requestTypes">
-            </div>
-            <div class="input">
-                <label for="action">Action:</label>
-                <input type="text" id="action" name="action">
-            </div>
-            <div class="input">
-                <label for="parentAppId">Parent App ID:</label>
-                <input type="text" id="parentAppId" name="parentAppId">
-            </div>
-            <div class="input">
-                <label for="ruleStatus">Rule Status:</label>
-                <input type="text" id="ruleStatus" name="ruleStatus">
-            </div>
-            <div class="input">
-                <label for="endTime">End Time:</label>
-                <input type="text" id="endTime" name="endTime">
-            </div>
-            <div class="input">
-                <label for="type">Type:</label>
-                <input type="text" id="type" name="type">
-            </div>
-            <div class="input">
-                <label for="deviceID">Device ID:</label>
-                <input type="text" id="deviceID" name="deviceID">
-            </div>
-            <div class="input">
-                <label for="condition">Condition:</label>
-                <input type="text" id="condition" name="condition">
-            </div>
-            <div class="input">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <button type="submit">UPDATE</button>
-        </form>
-    </section>
-    <section class="delete">
-        <center><h3>DELETE DATA</h3></center>
-        <form action="/delete" method="post">
-            <div class="input">
-                <label for="id">MongoDB ID:</label>
-                <input type="text" id="ruleId" name="id">
-            </div>
-            <button type="submit">DELETE</button>
-        </form>
-    </section>
+        </section>
+        <section class="get">
+            <center><h3>GET DATA</h3>
+                <form action="/get">
+                    <button type="submit" value="LOAD DATA">LOAD DATA</button>
+                </form>
+            </center>
+                <div>
+                    {{# each items }}
+                        <article class="item">
+                            <div>Status: {{ this.status }}</div>
+                            <div>Description: {{ this.description }}</div>
+                            <div>startTime: {{ this.startTime }}</div>
+                            <div>scheduledTime: {{ this.scheduledTime }}</div>
+                            <div>scheduleInterval: {{ this.scheduleInterval }}</div>
+                            <div>executionTimes: {{ this.executionTimes }}</div>
+                            <div>requestTypes: {{ this.requestTypes }}</div>
+                            <div>action: {{ this.action }}</div>
+                            <div>parentAppId: {{ this.parentAppId }}</div>
+                            <div>ruleStatus: {{ this.ruleStatus }}</div>
+                            <div>endTime: {{ this.endTime }}</div>
+                            <div>type: {{ this.type }}</div>
+                            <div>deviceID: {{ this.deviceId }}</div>
+                            <div>condition: {{ this.condition }}</div>
+                            <div>name: {{ this.name }}</div>
+                            <div>MongoDB_ID: {{ this._id }}</div>
+                        </article>
+                    {{/each}}
+                </div>
+        </section>
+        <section class="update">
+            <center><h3>UPDATE DATA</h3></center>
+            <form action="/update" method="post">
+                <div class="input">
+                    <fieldset>
+                        <label for="id">MongoDB ID:</label>
+                        <input type="text" id="mongoId" name="mongoId">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="status">Status:</label>
+                        <input type="radio" name="status" value="ACTIVE"> ACTIVE<br>
+                        <input type="radio" name="status" value="PENDING"> PENDING<br>
+                        <input type="radio" name="status" value="STOPPED"> STOPPED
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="startTime">Start Time:</label>
+                        <input type="text" id="startTime" name="startTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="scheduledTime">Scheduled Time:</label>
+                        <input type="text" id="scheduledTime" name="scheduledTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="scheduleInterval">Schedule Interval:</label>
+                        <input type="text" id="scheduleInterval" name="scheduleInterval">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="executionTimes">Execution Times:</label>
+                        <input type="text" id="executionTimes" name="executionTimes">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="requestTypes">Request Types:</label>
+                        <input type="radio" name="requestTypes" value="ADD"> ADD<br>
+                        <input type="radio" name="requestTypes" value="REMOVE"> REMOVE<br>
+                        <input type="radio" name="requestTypes" value="EDIT"> EDIT<br>
+                        <input type="radio" name="requestTypes" value="EXECUTE"> EXECUTE
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="action">Action:</label>
+                        <input type="text" id="action" name="action">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="parentAppId">Parent App ID:</label>
+                        <input type="text" id="parentAppId" name="parentAppId">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="ruleStatus">Rule Status:</label>
+                        <input type="text" id="ruleStatus" name="ruleStatus">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="endTime">End Time:</label>
+                        <input type="text" id="endTime" name="endTime">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="type">Type:</label>
+                        <input type="text" id="type" name="type">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="deviceID">Device ID:</label>
+                        <input type="text" id="deviceId" name="deviceId">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="condition">Condition:</label>
+                        <input type="text" id="condition" name="condition">
+                    </fieldset>
+                </div>
+                <div class="input">
+                    <fieldset>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </fieldset>
+                </div>
+                <button type="submit">UPDATE</button>
+            </form>
+        </section>
+        <section class="delete">
+            <center><h3>DELETE DATA</h3></center>
+            <form action="/delete" method="post">
+                <div class="input">
+                    <label for="id">MongoDB ID:</label>
+                    <input type="text" id="ruleId" name="id">
+                </div>
+                <button type="submit">DELETE</button>
+            </form>
+        </section>
+        <section class="detailed">
+            <center><h3>DETAILED DATA</h3></center>
+            <form action="/statusActive">
+                <button type="submit" value="LOAD DATA">ACTIVE RULES</button>
+            </form>
+            <form action="/statusPending">
+                <button type="submit" value="LOAD DATA">PENDING RULES</button>
+            </form>
+            <form action="/statusStopped">
+                <button type="submit" value="LOAD DATA">STOPPED RULES</button>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

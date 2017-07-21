@@ -7,15 +7,7 @@ var mongo = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 var router = express.Router();
-
 var url = 'mongodb://localhost/rules';
-
-
-
-
-
-
-
 
 // -----------------------------------------------------------------------------
 // ----------------------- DO NOT TOUCH THE LINES BELOW ------------------------
@@ -51,6 +43,9 @@ exports.getAllRulesByInterface = function(req, res, next)
 exports.createRuleByInterface = function (req, res)
 {
     var newRule = new Rule(req.body);
+    newRule.status = req.body.status;
+    newRule.requestTypes = req.body.requestTypes;
+    console.log(newRule);
     newRule.save(function(err, Rule)
     {
         if (err)
@@ -65,6 +60,7 @@ exports.updateRuleByInterface = function(req, res, next)
     var resultArray = [];
     var item = req.body;
     var id = req.body.mongoId;
+    delete item.mongoId;
     mongo.connect(url, function(err, db)
     {
         assert.equal(null, err);
@@ -84,9 +80,6 @@ exports.updateRuleByInterface = function(req, res, next)
         });
         db.close();
     });
-
-
-
 };
 
 /* DELETE RULE USING INTERFACE THEN REDIRECT TO GET VIEW */
@@ -106,6 +99,60 @@ exports.deleteRuleByInterface = function(req, res, next)
     mongo.connect(url, function(err, db)
     {
         var cursor = db.collection('rules').find();
+        cursor.forEach(function(doc, err)
+        {
+            assert.equal(null, err);
+            resultArray.push(doc);
+        }, function()
+        {
+            db.close();
+            res.render('index', {items: resultArray});
+        });
+    });
+};
+
+exports.statusActive = function(req, res, next)
+{
+    var resultArray = [];
+    mongo.connect(url, function(err, db)
+    {
+        var cursor = db.collection('rules').find({status : "ACTIVE"});
+        cursor.forEach(function(doc, err)
+        {
+            assert.equal(null, err);
+            resultArray.push(doc);
+        }, function()
+        {
+            db.close();
+            res.render('index', {items: resultArray});
+        });
+    });
+};
+
+exports.statusPending = function(req, res, next)
+{
+    var resultArray = [];
+    mongo.connect(url, function(err, db)
+    {
+        var cursor = db.collection('rules').find({status : "PENDING"});
+        cursor.forEach(function(doc, err)
+        {
+            assert.equal(null, err);
+            resultArray.push(doc);
+        }, function()
+        {
+            db.close();
+            res.render('index', {items: resultArray});
+        });
+    });
+};
+
+exports.statusStopped = function(req, res, next)
+{
+    var resultArray = [];
+    mongo.connect(url, function(err, db)
+    {
+        var cursor = db.collection('rules').find({status : "STOPPED"});
         cursor.forEach(function(doc, err)
         {
             assert.equal(null, err);

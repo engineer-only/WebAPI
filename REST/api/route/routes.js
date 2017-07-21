@@ -14,6 +14,13 @@ module.exports = function(app)
 		.post(pageRoute.updateRuleByInterface);
 	app.route('/delete')
 		.post(pageRoute.deleteRuleByInterface);
+	app.route('/statusActive')
+		.get(pageRoute.statusActive);
+	app.route('/statusPending')
+		.get(pageRoute.statusPending);
+	app.route('/statusStopped')
+		.get(pageRoute.statusStopped);
+
 
 
 // BELOW HERE IS WORKING

@@ -1,7 +1,7 @@
 {
-  "name": "todolistapi",
+  "name": "onbironDemo",
   "version": "1.0.0",
-  "description": "RESTful todoListApi",
+  "description": "RESTful JSON Data Management",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,24 +9,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/generalgmt/RESTfulAPITutorial.git"
+    "url": "git+https://github.com/engineer-only/NodeJS-MongoDB.git"
   },
   "keywords": [
     "RESTful",
     "API",
     "Tutorial"
   ],
-  "author": "olatunde garuba",
+  "author": "irfan kaleli",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/generalgmt/RESTfulAPITutorial/issues"
+    "url": "https://github.com/engineer-only/NodeJS-MongoDB/issues"
   },
-  "homepage": "https://github.com/generalgmt/RESTfulAPITutorial#readme",
+  "homepage": "https://github.com/engineer-only/NodeJS-MongoDB#readme",
   "devDependencies": {
     "nodemon": "^1.11.0"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.10.8",

@@ -43,7 +43,7 @@ var ruleSchema = new Schema(
         type: String,
         enum: ['TRIGGERED','MANUEL','SCHEDULED']
     },
-    id: {
+    deviceId: {
         type: String
     },
     condition: {
