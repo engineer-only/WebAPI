@@ -78,7 +78,7 @@ exports.updateRuleByInterface = function(req, res, next)
     var resultArray = [];
     var item = req.body;
     var id = req.body.id;
-    // // delete item.mongoId;
+    delete item.id;
     mongo.connect(url, function(err, db)
     {
         assert.equal(null, err);

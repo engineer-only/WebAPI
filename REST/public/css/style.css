@@ -24,26 +24,7 @@ section h3 {
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
-.insert {
-  background: #d6d3c4;
-  width: 400px;
-}
-.get {
-  background: #cecece;
-}
-.update {
-  background: #cecece;
-  width: 400px;
-}
-.delete {
-  background: #cecece;
-  width: 400px;
-}
-.controller {
-  width: 325px;
-  border: 10px;
-  box-shadow: 1px 1px 1px #34495e;
-}
+
 .input label {
   display: block;
   font-weight: bold;
@@ -63,8 +44,9 @@ button {
 }
 
 .item {
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 5px;
-  background: #a0a0a0;
-  border: 1px solid black;
+  background: #ffff80;
+  border: 2px dashed #ffb84d;
+  width:100%;
 }

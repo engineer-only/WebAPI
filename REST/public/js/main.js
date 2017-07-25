@@ -32,6 +32,7 @@ $(document).ready(function()
 
     $("#convertDelete").click(function()
     {
+        $("#mainForm").attr("action", "/delete");
         $("#convertInsert").prop( "disabled", false);
         $("#convertUpdate").prop( "disabled", false);
         $("#convertDelete").prop( "disabled", true);
@@ -139,17 +140,19 @@ $(document).ready(function()
 
     $("#deleteButton").click(function()
     {
-        var mongoRuleId = $("#mongoId").val();
-        $.ajax(
-        {
-            url: jsonURL + mongoRuleId,
-            type: "DELETE",
-            success: function(res)
-            {
-                console.log("Rule successfully deleted.");
-            }
-        });
-        clearForm();
+        // var mongoRuleId = $("#mongoId").val();
+        // $.ajax(
+        // {
+        //     url: jsonURL + mongoRuleId,
+        //     type: "DELETE",
+        //     success: function(res)
+        //     {
+        //         console.log("Rule successfully deleted.");
+        //     }
+        // });
+        // clearForm();
     });
+
+
 
 });

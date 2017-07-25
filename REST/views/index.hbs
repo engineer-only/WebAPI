@@ -26,13 +26,10 @@
             </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="http://localhost:3000/">Home</a></li>
-            <li><a href="http://localhost:3000/rules">Rule JSON</a></li>
+            <li><a href="http://localhost:3000/rules">Rules JSON</a></li>
         </ul>
         </div>
     </nav>
-
-
-
 
 
     <section class="col-md-3">
@@ -152,117 +149,7 @@
                 <center><button id="insertButton" type="submit" class="btn btn-info btn-lg">INSERT</button></center>
             </form>
         </section>
-
-
-        <!-- <section class="update">
-            <center><h3>UPDATE DATA</h3></center>
-            <form action="/update" method="post">
-                <div class="input">
-                        <label for="id">MongoDB ID:</label>
-                        <input type="text" class="form-control" id="mongoId" name="mongoId">
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="status">Status:</label>
-                        <input type="radio" name="status" value="ACTIVE"> ACTIVE<br>
-                        <input type="radio" name="status" value="PENDING"> PENDING<br>
-                        <input type="radio" name="status" value="STOPPED"> STOPPED
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="description">Description:</label>
-                        <input type="text" class="form-control" id="description" name="description">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="startTime">Start Time:</label>
-                        <input type="text" class="form-control" id="startTime" name="startTime">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="scheduledTime">Scheduled Time:</label>
-                        <input type="text" class="form-control" id="scheduledTime" name="scheduledTime">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="scheduleInterval">Schedule Interval:</label>
-                        <input type="text" class="form-control" id="scheduleInterval" name="scheduleInterval">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="executionTimes">Execution Times:</label>
-                        <input type="text" class="form-control" id="executionTimes" name="executionTimes">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="requestTypes">Request Types:</label>
-                        <input type="radio" name="requestTypes" value="ADD"> ADD<br>
-                        <input type="radio" name="requestTypes" value="REMOVE"> REMOVE<br>
-                        <input type="radio" name="requestTypes" value="EDIT"> EDIT<br>
-                        <input type="radio" name="requestTypes" value="EXECUTE"> EXECUTE
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="action">Action:</label>
-                        <input type="text" class="form-control" id="action" name="action">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="parentAppId">Parent App ID:</label>
-                        <input type="text" class="form-control" id="parentAppId" name="parentAppId">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="ruleStatus">Rule Status:</label>
-                        <input type="text" class="form-control" id="ruleStatus" name="ruleStatus">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="endTime">End Time:</label>
-                        <input type="text" class="form-control" id="endTime" name="endTime">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="type">Type:</label>
-                        <input type="text" class="form-control" id="type" name="type">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="deviceID">Device ID:</label>
-                        <input type="text" class="form-control" id="deviceId" name="deviceId">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="condition">Condition:</label>
-                        <input type="text" class="form-control" id="condition" name="condition">
-                    </fieldset>
-                </div>
-                <div class="input">
-                    <fieldset>
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </fieldset>
-                </div>
-                <center><button type="submit" class="btn btn-warning">UPDATE</button></center>
-            </form>
-        </section> -->
-
     </section>
-
-
 
 
 
@@ -299,7 +186,7 @@
                         <div>deviceID: {{ this.deviceId }}</div>
                         <div>condition: {{ this.condition }}</div>
                         <div>name: {{ this.name }}</div>
-                        <div>MongoDB_ID: {{ this._id }}</div>
+                        <div><b>MongoDB_ID: {{ this._id }}</b></div>
                     </article>
                 {{/each}}
             </div>
