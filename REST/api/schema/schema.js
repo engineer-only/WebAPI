@@ -14,13 +14,13 @@ var ruleSchema = new Schema(
         type: String
     },
     scheduledTime: {
-        type: Date
+        type: String
     },
     scheduleInterval: {
         type: Number
     },
     executionTimes: {
-        type: Date
+        type: String
     },
     requestTypes: {
         type: String,

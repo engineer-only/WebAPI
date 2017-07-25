@@ -9,94 +9,55 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" crossorigin="anonymous"></script>
     <title> Home Page </title>
-    <style>
-    	body {
-    		padding: 50px;
-    		font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    		}
-    	a {
-    	  color: #00B7FF;
-    	}
-    	section {
-    	  float: left;
-    	  background: #bdc3c7;
-    	  padding: 10px;
-    	  margin: 30px;
-    	  width: 300px;
-    	  box-shadow: 5px 5px 3px #34495e;
-    	  min-height: 100px;
-    	}
-    	section:first-of-type {
-    	  margin-left: 0;
-    	}
-    	section:last-of-type {
-    	  margin-right: 0;
-    	}
-    	section h3 {
-    	  border-bottom: 1px solid black;
-    	  padding-bottom: 5px;
-    	}
-    	.insert {
-    	  background: #cecece;
-    	}
-    	.get {
-    	  background: #cecece;
-    	}
-    	.update {
-    	  background: #cecece;
-    	}
-    	.delete {
-    	  background: #cecece;
-    	}
-        .detailed {
-    	  background: #cecece;
-    	}
-    	.input label {
-    	  display: block;
-    	  font-weight: bold;
-    	  padding: 2px 0;
-    	}
-    	input,
-    	button {
-    	  font: inherit;
-    	}
-    	button {
-    	  margin-top: 10px;
-    	  border: none;
-    	  box-shadow: 1px 1px 1px #34495e;
-    	  border-radius: 0;
-    	  background: #ecf0f1;
-    	  cursor: pointer;
-    	}
-    	button:hover {
-    	  background: #bdc3c7;
-    	}
-    	.item {
-    	  margin: 10px 0;
-    	  padding: 5px;
-    	  background: #a0a0a0;
-    	  border: 1px solid black;
-    	}
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
+
     <center>
-        <img id="onbironImg" src="https://media.licdn.com/media/p/7/000/2cf/311/16b9794.png" style="width:216px;height:56px;">
-    	<h1>DEMO Home Page</h1>
-	</center>
-    <div class="operations">
-    	<section class="insert">
-            <center><h3>INSERT DATA</h3></center>
-            <form action="/insert" method="post">
+        <img id="onbironImg" src="https://media.licdn.com/media/p/7/000/2cf/311/16b9794.png" class="img-responsive" style="width:288px;height:75px;">
+    </center>
+    <h1 id="homeTitle">DEMO Home Page<small> v1.0</small></h1>
+
+    <nav class="navbar navbar-inverse bg-inverse" style="background-color: #eea642;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.onbiron.com.tr/">Onbiron</a>
+            </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost:3000/">Home</a></li>
+            <li><a href="http://localhost:3000/rules">Rule JSON</a></li>
+        </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <section class="col-md-3">
+	    <section class="col-md-12" style="background-color:#d6d3c4;">
+            <center>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" id="convertInsert">INSERT</button>
+                    <button type="button" class="btn btn-default" id="convertUpdate">UPDATE</button>
+                    <button type="button" class="btn btn-default" id="convertDelete">DELETE</button>
+                </div>
+            </center>
+            <center><h3 id="panelHeading">INSERT RULE</h3></center>
+            <form action="/insert" method="post" id="mainForm">
                 <div class="input">
-                    <fieldset>
-                        <label for="status">Status:</label>
-                        <input type="radio" name="status" value="ACTIVE"> ACTIVE<br>
-                        <input type="radio" name="status" value="PENDING"> PENDING<br>
-                        <input type="radio" name="status" value="STOPPED"> STOPPED
-                    </fieldset>
+                    <label for="id" id="mongoText">MongoDB ID:</label>
+                    <input type="text" class="form-control" id="mongoId" name="id" disabled>
+                </div>
+                <button type="button" class="btn btn-primary" id="fillFormButton" disabled>Fill Form</button>
+                <button type="submit" class="btn btn-danger" id="deleteButton" disabled>DELETE</button>
+
+                <div class="input">
+                    <label>Status:</label>
+                    <input type="radio" name="status" value="ACTIVE" id="activeRadio">ACTIVE<br>
+                    <input type="radio" name="status" value="PENDING" id="pendingRadio"> PENDING<br>
+                    <input type="radio" name="status" value="STOPPED" id="stoppedRadio"> STOPPED
                 </div>
                 <div class="input">
                     <fieldset>
@@ -131,10 +92,10 @@
                 <div class="input">
                     <fieldset>
                         <label for="requestTypes">Request Types:</label>
-                        <input type="radio" name="requestTypes" value="ADD"> ADD<br>
-                        <input type="radio" name="requestTypes" value="REMOVE"> REMOVE<br>
-                        <input type="radio" name="requestTypes" value="EDIT"> EDIT<br>
-                        <input type="radio" name="requestTypes" value="EXECUTE"> EXECUTE
+                        <input type="radio" name="requestTypes" value="ADD" id="addRadio"> ADD<br>
+                        <input type="radio" name="requestTypes" value="REMOVE" id="removeRadio"> REMOVE<br>
+                        <input type="radio" name="requestTypes" value="EDIT" id="editRadio"> EDIT<br>
+                        <input type="radio" name="requestTypes" value="EXECUTE" id="executeRadio"> EXECUTE
                     </fieldset>
                 </div>
                 <br>
@@ -165,7 +126,9 @@
                 <div class="input">
                     <fieldset>
                         <label for="type">Type:</label>
-                        <input type="text" class="form-control" id="type" name="type">
+                        <input type="radio" name="type" value="TRIGGERED" id="triggeredRadio">TRIGGERED<br>
+                        <input type="radio" name="type" value="MANUEL" id="manuelRadio"> MANUEL<br>
+                        <input type="radio" name="type" value="SCHEDULED" id="scheduledRadio"> SCHEDULED
                     </fieldset>
                 </div>
                 <div class="input">
@@ -186,46 +149,17 @@
                         <input type="text" class="form-control" id="name" name="name">
                     </fieldset>
                 </div>
-                <center><button type="submit" class="btn btn-info btn-lg">INSERT</button></center>
+                <center><button id="insertButton" type="submit" class="btn btn-info btn-lg">INSERT</button></center>
             </form>
         </section>
-        <section class="get">
-            <center><h3>GET DATA</h3>
-                <form action="/get">
-                    <button type="submit" class="btn btn-info btn-lg" value="LOAD DATA">LOAD DATA</button>
-                </form>
-            </center>
-                <div>
-                    {{# each items }}
-                        <article class="item">
-                            <div>Status: {{ this.status }}</div>
-                            <div>Description: {{ this.description }}</div>
-                            <div>startTime: {{ this.startTime }}</div>
-                            <div>scheduledTime: {{ this.scheduledTime }}</div>
-                            <div>scheduleInterval: {{ this.scheduleInterval }}</div>
-                            <div>executionTimes: {{ this.executionTimes }}</div>
-                            <div>requestTypes: {{ this.requestTypes }}</div>
-                            <div>action: {{ this.action }}</div>
-                            <div>parentAppId: {{ this.parentAppId }}</div>
-                            <div>ruleStatus: {{ this.ruleStatus }}</div>
-                            <div>endTime: {{ this.endTime }}</div>
-                            <div>type: {{ this.type }}</div>
-                            <div>deviceID: {{ this.deviceId }}</div>
-                            <div>condition: {{ this.condition }}</div>
-                            <div>name: {{ this.name }}</div>
-                            <div>MongoDB_ID: {{ this._id }}</div>
-                        </article>
-                    {{/each}}
-                </div>
-        </section>
-        <section class="update">
+
+
+        <!-- <section class="update">
             <center><h3>UPDATE DATA</h3></center>
             <form action="/update" method="post">
                 <div class="input">
-                    <fieldset>
                         <label for="id">MongoDB ID:</label>
                         <input type="text" class="form-control" id="mongoId" name="mongoId">
-                    </fieldset>
                 </div>
                 <div class="input">
                     <fieldset>
@@ -324,30 +258,52 @@
                 </div>
                 <center><button type="submit" class="btn btn-warning">UPDATE</button></center>
             </form>
-        </section>
-        <section class="delete">
-            <center><h3>DELETE DATA</h3></center>
-            <form action="/delete" method="post">
-                <div class="input">
-                    <label for="id">MongoDB ID:</label>
-                    <input type="text" id="ruleId" name="id">
+        </section> -->
+
+    </section>
+
+
+
+
+
+    <section class="col-md-8">
+        <center><h3>GET DATA</h3></center>
+            <form action="/get" method="post">
+                <label for="statusCon">Status:</label>
+                <div class="statusSelectionForm">
+                    <select class="btn btn-default dropdown-toggle" id="selectionStatus" name="statusCondition">
+                        <option value="all">ALL</option>
+                        <option value="active">ACTIVE</option>
+                        <option value="pending">PENDING</option>
+                        <option value="stopped">STOPPED</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-danger">DELETE</button>
+                <br>
+                <button id="loadButton" type="submit" class="btn btn-info btn-lg" value="LOAD DATA">LOAD DATA</button>
             </form>
-        </section>
-        <section class="detailed">
-            <center><h3>DETAILED DATA</h3></center>
-            <form action="/statusActive">
-                <button type="submit" value="LOAD DATA" class="btn-success">ACTIVE RULES</button>
-            </form>
-            <form action="/statusPending">
-                <button type="submit" value="LOAD DATA" class="btn-success">PENDING RULES</button>
-            </form>
-            <form action="/statusStopped">
-                <button type="submit" value="LOAD DATA" class="btn-success">STOPPED RULES</button>
-            </form>
-        </section>
-    </div>
+            <div>
+                {{# each items }}
+                    <article class="item">
+                        <div>Status: {{ this.status }}</div>
+                        <div>Description: {{ this.description }}</div>
+                        <div>startTime: {{ this.startTime }}</div>
+                        <div>scheduledTime: {{ this.scheduledTime }}</div>
+                        <div>scheduleInterval: {{ this.scheduleInterval }}</div>
+                        <div>executionTimes: {{ this.executionTimes }}</div>
+                        <div>requestTypes: {{ this.requestTypes }}</div>
+                        <div>action: {{ this.action }}</div>
+                        <div>parentAppId: {{ this.parentAppId }}</div>
+                        <div>ruleStatus: {{ this.ruleStatus }}</div>
+                        <div>endTime: {{ this.endTime }}</div>
+                        <div>type: {{ this.type }}</div>
+                        <div>deviceID: {{ this.deviceId }}</div>
+                        <div>condition: {{ this.condition }}</div>
+                        <div>name: {{ this.name }}</div>
+                        <div>MongoDB_ID: {{ this._id }}</div>
+                    </article>
+                {{/each}}
+            </div>
+    </section>
 
 </body>
 </html>

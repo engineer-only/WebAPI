@@ -1,62 +1,58 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
 a {
   color: #00B7FF;
 }
-
 section {
   float: left;
-  background: #bdc3c7;
+  background: #eea642;
   padding: 10px;
-  margin: 30px;
-  width: 300px;
-  box-shadow: 3px 3px 1px #34495e;
+  margin: 3px;
+  width: 320px;
   min-height: 100px;
+  border-radius: 10px;
 }
-
 section:first-of-type {
   margin-left: 0;
 }
-
 section:last-of-type {
   margin-right: 0;
 }
-
 section h3 {
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
-
 .insert {
-  background: #cecece;
+  background: #d6d3c4;
+  width: 400px;
 }
-
 .get {
   background: #cecece;
 }
-
 .update {
   background: #cecece;
+  width: 400px;
 }
-
 .delete {
   background: #cecece;
+  width: 400px;
 }
-
+.controller {
+  width: 325px;
+  border: 10px;
+  box-shadow: 1px 1px 1px #34495e;
+}
 .input label {
   display: block;
   font-weight: bold;
   padding: 2px 0;
 }
-
 input,
 button {
   font: inherit;
 }
-
 button {
   margin-top: 10px;
   border: none;
@@ -66,13 +62,9 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #bdc3c7;
-}
-
 .item {
   margin: 10px 0;
   padding: 5px;
-  background: #95a5a6;
+  background: #a0a0a0;
   border: 1px solid black;
 }

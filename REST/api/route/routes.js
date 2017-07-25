@@ -7,19 +7,13 @@ module.exports = function(app)
 	app.route('/')
 		.get(pageRoute.getHomePage);
 	app.route('/get')
-		.get(pageRoute.getAllRulesByInterface);
+		.post(pageRoute.getRulesByInterface);
 	app.route('/insert')
 		.post(pageRoute.createRuleByInterface);
 	app.route('/update')
 		.post(pageRoute.updateRuleByInterface);
 	app.route('/delete')
 		.post(pageRoute.deleteRuleByInterface);
-	app.route('/statusActive')
-		.get(pageRoute.statusActive);
-	app.route('/statusPending')
-		.get(pageRoute.statusPending);
-	app.route('/statusStopped')
-		.get(pageRoute.statusStopped);
 
 
 

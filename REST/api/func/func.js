@@ -21,12 +21,29 @@ exports.getHomePage = function(req, res)
 };
 
 /* LIST ALL RULES */
-exports.getAllRulesByInterface = function(req, res, next)
+exports.getRulesByInterface = function(req, res, next)
 {
+    var statusCondition = req.body.statusCondition;
     var resultArray = [];
     mongo.connect(url, function(err, db)
     {
-        var cursor = db.collection('rules').find();
+        var cursor;
+        switch(statusCondition) {
+            case "all":
+                cursor = db.collection('rules').find();
+                break;
+            case "active":
+                cursor = db.collection('rules').find({status : "ACTIVE"});
+                break;
+            case "pending":
+                cursor = db.collection('rules').find({status : "PENDING"});
+                break;
+            case "stopped":
+                cursor = db.collection('rules').find({status : "STOPPED"});
+                break;
+            default:
+                cursor = db.collection('rules').find();
+        }
         cursor.forEach(function(doc, err)
         {
             assert.equal(null, err);
@@ -45,13 +62,14 @@ exports.createRuleByInterface = function (req, res)
     var newRule = new Rule(req.body);
     newRule.status = req.body.status;
     newRule.requestTypes = req.body.requestTypes;
+    newRule.type = req.body.type;
     console.log(newRule);
     newRule.save(function(err, Rule)
     {
         if (err)
             res.send(err);
     });
-    console.log("Rule successfully added");
+    console.log("Rule successfully added.");
     res.redirect('/');
 };
 
@@ -59,8 +77,8 @@ exports.updateRuleByInterface = function(req, res, next)
 {
     var resultArray = [];
     var item = req.body;
-    var id = req.body.mongoId;
-    delete item.mongoId;
+    var id = req.body.id;
+    // // delete item.mongoId;
     mongo.connect(url, function(err, db)
     {
         assert.equal(null, err);
@@ -111,60 +129,6 @@ exports.deleteRuleByInterface = function(req, res, next)
     });
 };
 
-exports.statusActive = function(req, res, next)
-{
-    var resultArray = [];
-    mongo.connect(url, function(err, db)
-    {
-        var cursor = db.collection('rules').find({status : "ACTIVE"});
-        cursor.forEach(function(doc, err)
-        {
-            assert.equal(null, err);
-            resultArray.push(doc);
-        }, function()
-        {
-            db.close();
-            res.render('index', {items: resultArray});
-        });
-    });
-};
-
-exports.statusPending = function(req, res, next)
-{
-    var resultArray = [];
-    mongo.connect(url, function(err, db)
-    {
-        var cursor = db.collection('rules').find({status : "PENDING"});
-        cursor.forEach(function(doc, err)
-        {
-            assert.equal(null, err);
-            resultArray.push(doc);
-        }, function()
-        {
-            db.close();
-            res.render('index', {items: resultArray});
-        });
-    });
-};
-
-exports.statusStopped = function(req, res, next)
-{
-    var resultArray = [];
-    mongo.connect(url, function(err, db)
-    {
-        var cursor = db.collection('rules').find({status : "STOPPED"});
-        cursor.forEach(function(doc, err)
-        {
-            assert.equal(null, err);
-            resultArray.push(doc);
-        }, function()
-        {
-            db.close();
-            res.render('index', {items: resultArray});
-        });
-    });
-};
-
 
 /* LIST ALL THE RULES WITH GET REQUEST */
 exports.listAllRules = function(req, res)
@@ -199,7 +163,7 @@ exports.readRule = function(req, res)
         if (err)
             res.send(err);
         res.json(Rule);
-  });
+    });
 };
 
 /* UPDATE A RULE WITH ITS MONGODB ID */
