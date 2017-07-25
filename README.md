@@ -2,7 +2,7 @@
 DEMO for Onbiron Company,
 Web Service Using Node.js Express and MongoDB for inserting, updating, deleting and showing JSON data.
 
-![ss](https://user-images.githubusercontent.com/29835000/28469237-5462b404-6e3e-11e7-8cc0-fb946d2e35ad.png)
+![ss](https://user-images.githubusercontent.com/29835000/28563946-3cf4cee8-7130-11e7-8d3c-a2ce8768ede4.png)
 
 
 Clone the directory to your local and get in REST file to use the following in terminal:
