@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" crossorigin="anonymous"></script>
+    <title> Home Page </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <h1 id="homeTitle">Web Service <small> v1.5</small></h1>
+
+
+    <nav class="navbar navbar-inverse bg-inverse" style="background-color: #eea642;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.onbiron.com.tr/">Onbiron</a>
+            </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost:8000/">Home&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></a></span></li>
+            <li><a href="http://localhost:8000/rules">Rules JSON</a></li>
+        </ul>
+        </div>
+    </nav>
+
+
+    <section class="col-xs-12 .col-sm-6 .col-lg-8">
+        <center><h3>GET RULES </h3></center>
+            <form action="/get" method="post">
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button id="activeFilterButton" name="statusCondition" type="submit" class="btn btn-success btn-filter" value="active">ACTIVE</button>
+                        <button id="pendingFilterButton" name="statusCondition" type="submit" class="btn btn-warning btn-filter" value="pending">PENDING</button>
+                        <button id="stoppedFilterButton" name="statusCondition" type="submit" class="btn btn-danger btn-filter" value="stopped">STOPPED</button>
+                        <button id="allFilterButton" name="statusCondition" type="submit" class="btn btn-default btn-filter" value="all">ALL</button>
+                    </div>
+                </div>
+            </form>
+            <button align="left" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ruleModal">Rule Details</button>
+                <div class="modal fade" id="ruleModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Details of Rules</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Total number of Rules: {{ totalNumber }}</h4><br>
+                                <h5>ACTIVE Rules: {{ activeNumber }}</h5>
+                                <h5>PENDING Rules: {{ pendingNumber }}</h5>
+                                <h5>STOPPED Rules: {{ stoppedNumber }}</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            <form action="/insertPage" method="post">
+                <p align="center">
+                <button type="submit" class="btn btn-default" id="insertPage">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true">  INSERT</span>
+                </button>
+                </p>
+            </form>
+
+            <div>
+                {{# each items }}
+                    <div class="item"
+                    {{#ifCond this.ruleStatus "PENDING"}}
+                        style="background-color:#FFC916"
+                    {{/ifCond}}
+                    {{#ifCond this.ruleStatus "ACTIVE"}}
+                        style="background-color:#85CA2B"
+                    {{/ifCond}}
+                    {{#ifCond this.ruleStatus "STOPPED"}}
+                        style="background-color:#C3322E"
+                    {{/ifCond}}>
+                        <div>
+                        <div class="statusBox"><b> Rule Status: {{ this.ruleStatus }}</b></div></div>
+                        <div class="descriptionBox"<b> Description: </b>{{ this.description }} </div>
+                        <div class="featureBox">
+                            <b>Name: </b>{{ this.name }}<br>
+                            <b>Request Type: </b>{{ this.requestTypes }}<br>
+                            <b>Action: </b>{{ this.action }} <br>
+                            <b>Type: </b>{{ this.type }} <br>
+                            <b>DeviceID: </b>{{ this.deviceId }} <br>
+                        </div>
+
+
+                        <form action="/updatePage" method="post">
+                            <div align="left">
+                                <button style="width: 100%;" type="submit" class="btn btn-default btn-md" data-buttonType="0" name="ruleId" value="{{this._id}}">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div align="left">
+                            <button style="width: 100%;" type="submit" class="btn btn-default btn-md" data-index="{{this._id}}" data-buttonType="1">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+
+
+    </section>
+
+</body>
+</html>
