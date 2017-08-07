@@ -21,7 +21,7 @@ exports.getHomePage = function(req, res)
     var totalRule = 0, activeRule = 0, pendingRule = 0, stoppedRule = 0;
     mongo.connect(url, function(err, db)
     {
-        var cursor = db.collection('rules').find();
+        var cursor = db.collection('rules').find().sort( { status: 1 });
         cursor.forEach(function(doc, err)
         {
             assert.equal(null, err);
@@ -56,7 +56,7 @@ exports.getRulesByInterface = function(req, res, next)
         var cursor;
         switch(statusCondition) {
             case "all":
-                cursor = db.collection('rules').find();
+                cursor = db.collection('rules').find().sort( { status: 1 });
                 break;
             case "active":
                 cursor = db.collection('rules').find({ruleStatus : "ACTIVE"});
