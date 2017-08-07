@@ -1,0 +1,124 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+a {
+  color: #00B7FF;
+}
+
+section {
+  float: left;
+  background: #eea642;
+  padding: 10px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+section h3 {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+.input label {
+  display: block;
+  font-weight: bold;
+  padding: 2px 0;
+}
+input,button {
+  font: inherit;
+}
+
+button {
+  margin-top: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px #34495e;
+  border-radius: 0;
+  background: #ecf0f1;
+  cursor: pointer;
+}
+
+.insertCommon {
+    width: 100%;
+    float:left;
+    border:50px solid #ffff80;
+    border-radius: 10px;
+    padding:40px;
+    margin: 15px 0;
+}
+
+.actionSection {
+    width: 100%;
+    float:left;
+    border:2px solid #ffff80;
+    border-radius: 10px;
+    padding:15px;
+    margin: 15px;
+}
+
+.insertTypeChoice {
+    width: 100%;
+    float:left;
+    padding:40px;
+    margin: 15px 0;
+}
+
+.statusBox {
+    margin: 15px 0;
+    padding: 5px;
+    background: #ffff80;
+    border: 1px solid #544300;
+    border-radius: 5px;
+    width:100%;
+}
+
+.featureBox {
+    margin: 15px 0;
+    padding: 5px;
+    background: #ffff80;
+    border: 1px solid #544300;
+    border-radius: 5px;
+    width:100%;
+    min-height: 80px;
+}
+
+.descriptionBox {
+    margin: 15px 0;
+    padding: 5px;
+    background: #ffff80;
+    border: 1px solid #544300;
+    border-radius: 5px;
+    width:100%;
+    min-height: 50px;
+}
+
+.item {
+    min-height: 330px;
+    float:left;
+    margin: 15px 2px;
+    padding: 5px;
+    border: 2px solid #262623;
+    width:24%;
+    border-radius: 8px;
+}
+
+#radioBtn .active{
+    color: #ffffff;
+    background: #4272f7;
+}
+
+
+#radioBtn .notActive{
+    color: #4272f7;
+    background: #ffffff;
+}
+
+#radioBtnType .active{
+    color: #ffffff;
+    background: #4272f7;
+}
+
+
+#radioBtnType .notActive{
+    color: #4272f7;
+    background: #ffffff;
+}
