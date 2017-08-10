@@ -7,9 +7,14 @@ API is completely mobile friendly. NodeJS and MongoDB must be installed on your 
 
 
 
+
+Install NodeJS
 ```
-INSTALL NodeJS
 sudo apt-get install nodejs
+```
+
+Install MongoDB 
+```
 https://docs.mongodb.com/manual/installation/
 ```
 
