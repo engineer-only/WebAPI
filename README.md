@@ -1,8 +1,20 @@
 # NodeJS - MongoDB Powered Web Service
+
 API for Onbiron Company,
 
 Web Service Using Node.js Express and MongoDB for inserting, updating, deleting and showing JSON data.
-API is completely mobile friendly.
+API is completely mobile friendly. NodeJS and MongoDB must be installed on your machine. 
+
+
+
+```
+INSTALL NodeJS
+sudo apt-get install nodejs
+https://docs.mongodb.com/manual/installation/
+```
+
+
+
 
 ![github1](https://user-images.githubusercontent.com/29835000/29017685-9e4c8750-7b60-11e7-9055-a4d706804a9b.png)
 
