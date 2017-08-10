@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" crossorigin="anonymous">
@@ -28,6 +30,13 @@
         </div>
     </nav>
 
+    <!-- LOGIN WITH GOOGLE PART -->
+    <meta name="google-signin-client_id" content="322893995979-n4f5odlghvhalv7j9ro6s2b19dpfeq9q.apps.googleusercontent.com">
+    <div align="right"><u>Login with Google</u></div>
+    <div align="right" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div align="right"><a href="#" onclick="signOut();">Sign out</a></div>
+    <div align="right"><a align="right" id="userSection" href="">User&nbsp;&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></a></div>
+    <!-- LOGIN WITH GOOGLE PART -->
 
     <section class="col-xs-12 .col-sm-6 .col-lg-8">
         <center><h3><b>GET RULES </b></h3></center>
@@ -88,10 +97,10 @@
                         style="background-color:#ffe600"
                     {{/ifCond}}
                     {{#ifCond this.ruleStatus "ACTIVE"}}
-                        style="background-color:#85CA2B"
+                        style="background-color:#3aff00"
                     {{/ifCond}}
                     {{#ifCond this.ruleStatus "STOPPED"}}
-                        style="background-color:#910000"
+                        style="background-color:#e05555"
                     {{/ifCond}}>
                         <div>
                         <div class="statusBox"><b> Rule Status: {{ this.ruleStatus }}</b></div></div>
