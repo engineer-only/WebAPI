@@ -48,7 +48,7 @@ in terminal. Now you must be able to see the Web Service at "http://localhost:30
 
 If you are getting missing package errors, download them by necessary commands which you can find by Google.
 
-PS: Google Authentication is under construction for now.
+PS: Google Authentication is under construction for now. So it is not shown in the screen shots.
 
 Best.
 
