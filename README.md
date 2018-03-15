@@ -50,7 +50,7 @@ If you are getting missing package errors, download them by necessary commands w
 
 PS: Google Authentication is under construction for now. So it is not shown in the screen shots.
 
-Best.
+Best...
 
 
 
