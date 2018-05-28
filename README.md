@@ -46,7 +46,7 @@ npm run start
 ```
 in terminal. Now you must be able to see the Web Service at "http://localhost:3000/".
 
-If you are getting missing package errors, download them by necessary commands which you can find by googling.
+If you are getting missing package errors, download them by necessary commands which you can find by Google'ing.
 
 PS: Google Authentication is under construction for now. So it is not shown in the screen shots.
 
