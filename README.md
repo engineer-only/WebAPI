@@ -36,7 +36,6 @@ Clone the directory to your local and get in REST file to use the following in t
 ```
 npm init
 npm install
-npm install express --save
 ```
 
 after these steps, use:
