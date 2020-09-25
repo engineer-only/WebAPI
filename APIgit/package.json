@@ -30,7 +30,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
-    "mongoose": "^4.10.8",
+    "mongoose": "^5.7.5",
     "morgan": "^1.8.2"
   }
 }
