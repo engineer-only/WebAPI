@@ -35,14 +35,11 @@ Insertion can be done dynamically by adding new action fields. [ ScreenShot from
 Clone the directory to your local and get in REST file to use the following in terminal:
 
 ```
-npm init
 npm install
 ```
 
-after these steps, use:
-
 ```
-npm run start
+npm start
 ```
 in terminal. Now you must be able to see the Web Service at "http://localhost:3000/".
 
